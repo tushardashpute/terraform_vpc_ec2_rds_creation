@@ -23,6 +23,8 @@ resource "aws_db_instance" "rds" {
   port                    = 3306
   publicly_accessible     = true
   storage_encrypted       = false
+  skip_final_snapshot       = true
+  final_snapshot_identifier = "Ignore"
 
   vpc_security_group_ids = [aws_security_group.ec2.id]
 
